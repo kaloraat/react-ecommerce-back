@@ -27,3 +27,6 @@ exports.remove = (req, res) => {
     res.send("ok");
   });
 };
+
+// how to resize
+// cloudinary.image("turtles.jpg", {width: 70, height: 53, crop: "scale"})

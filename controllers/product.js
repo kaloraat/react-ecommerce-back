@@ -113,6 +113,15 @@ exports.productsCount = async (req, res) => {
   res.json(total);
 };
 
+/**
+ UPDATING RATING DIRECTLY
+ if (rating) {
+// Update user's rating
+ rating.star = star;
+ product = await product.save({ validateBeforeSave: true });
+ res.status(200).json({product});
+ */
+
 exports.productStar = async (req, res) => {
   const product = await Product.findById(req.params.productId).exec();
   const user = await User.findOne({ email: req.user.email }).exec();

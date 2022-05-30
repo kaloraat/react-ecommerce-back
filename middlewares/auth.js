@@ -7,8 +7,8 @@ exports.authCheck = async (req, res, next) => {
     const firebaseUser = await admin
       .auth()
       .verifyIdToken(req.headers.authtoken);
-    // console.log("FIREBASE USER IN AUTHCHECK", firebaseUser);
-    req.user = firebaseUser;
+    console.log("FIREBASE USER IN AUTHCHECK", firebaseUser);
+    req.user = firebaseUser; // HERE YOU GET USER EMAIL
     next();
   } catch (err) {
     // console.log(err);
